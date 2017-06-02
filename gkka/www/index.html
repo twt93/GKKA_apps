@@ -43,15 +43,17 @@
  
     // Wait for device API libraries to load
     //
-    function onLoad() {
+   
         document.addEventListener("deviceready", onDeviceReady, false);
-    }
+
  
     // device APIs are available
     //
     function onDeviceReady() {
         // Register the event listener
-        document.addEventListener("backbutton", onBackKeyDown, false);
+        setTimeout(function(){
+            document.addEventListener("backbutton", onBackKeyDown, false);
+        },500);
     }
  
     // Handle the back button
@@ -73,7 +75,7 @@
 </script>
 
 </head>
-<body onload="onLoad()">
+<body >
 
 <div id="preloader">
 	<div id="status">
@@ -85,14 +87,14 @@
 </div>
 
 <div class="homepage-wrapper">
-	<img class="homepage-logo" src="images/misc/logo.png"  alt="img">
-    <em class="homepage-logo-sub"></em>
+	<img class="homepage-logo" src="images/misc/logogkka.png"  alt="img">
+    <em class="homepage-logo-sub">Panakukkang</em>
     
     <div class="homepage-navigation">
     	
         <a class="type-icon"    href="warta.html">E-Warta</a>
         
-        <a class="mail-icon"	href="contact.html">Contact</a>
+        <a class="mail-icon"	onclick="onBackKeyDown()">Exit</a>
         
         <div class="clear"></div>
     </div>
