@@ -34,14 +34,14 @@ var app = {
         e.preventDefault();
         navigator.notification.confirm("Are you sure you want to exit ?", onConfirm, "Confirmation", "Yes,No"); 
         // Prompt the user with the choice
-    }
+    },
     onConfirm: function(button) {
     if(button==1 ){//If User selected No, then we just do nothing
         navigator.app.exitApp();// Otherwise we quit the app.
     }else{
         return;
 
-    }
+    },
 };
 
 app.initialize();
