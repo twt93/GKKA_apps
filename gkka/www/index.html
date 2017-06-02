@@ -43,15 +43,9 @@
  
     // Wait for device API libraries to load
     //
-<<<<<<< HEAD
    
         document.addEventListener("deviceready", onDeviceReady, false);
 
-=======
-    
-        document.addEventListener("deviceready", onDeviceReady, false);
-    
->>>>>>> 8d1be97193c93d15c808318851b14aa0e5638701
  
     // device APIs are available
     //
@@ -60,6 +54,13 @@
         setTimeout(function(){
             document.addEventListener("backbutton", onBackKeyDown, false);
         },500);
+
+        navigator.notification.alert(
+    "Whassssssssuuuuupppp",             // the message
+    function() {},                      // a callback
+    "My Very Professional Application", // a title
+    "OK"                                // the button text
+);
     }
  
     // Handle the back button
@@ -81,11 +82,7 @@
 </script>
 
 </head>
-<<<<<<< HEAD
 <body >
-=======
-<body>
->>>>>>> 8d1be97193c93d15c808318851b14aa0e5638701
 
 <div id="preloader">
 	<div id="status">
