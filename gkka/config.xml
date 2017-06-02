@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.gkka" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.phonegap.gkka" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>GKKA</name>
     <description>
         GKKA
@@ -19,7 +19,8 @@
         <allow-intent href="market:*" />
     </platform>
     <engine name="android" spec="^6.2.3" />
-    <plugin name="cordova-plugin-dialogs" spec="^1.3.3" />
+    <plugin name="cordova-plugin-dialogs"  source="npm" spec="^1.3.3" />
     <plugin name="cordova-plugin-inappbrowser" spec="~1.3.0" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
+
 </widget>

@@ -51,16 +51,17 @@
     //
     function onDeviceReady() {
         // Register the event listener
+        alert("Device is ready");
         setTimeout(function(){
             document.addEventListener("backbutton", onBackKeyDown, false);
         },500);
 
         navigator.notification.alert(
-    "Whassssssssuuuuupppp",             // the message
-    function() {},                      // a callback
-    "My Very Professional Application", // a title
-    "OK"                                // the button text
-);
+        "Whassssssssuuuuupppp",             // the message
+        function() {},                      // a callback
+        "My Very Professional Application", // a title
+        "OK"                                // the button text
+        );
     }
  
     // Handle the back button
