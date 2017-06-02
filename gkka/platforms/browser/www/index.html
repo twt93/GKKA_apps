@@ -38,44 +38,52 @@
 <script type="text/javascript" src="scripts/framework.js"></script>
 <script type="text/javascript" src="scripts/framework.launcher.js"></script>
 
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" charset="utf-8">
-
+ <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+ <script type="text/javascript" charset="utf-8">
+ 
     // Wait for device API libraries to load
     //
-    function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
+   
+        document.addEventListener("deviceready", this.onDeviceReady, false);
 
+ 
     // device APIs are available
     //
     function onDeviceReady() {
         // Register the event listener
-        document.addEventListener("backbutton", onBackKeyDown, false);
-    }
+        alert("Device is ready");
+        setTimeout(function(){
+            document.addEventListener("backbutton", onBackKeyDown, false);
+        },500);
 
+        navigator.notification.alert(
+        "Whassssssssuuuuupppp",             // the message
+        function() {},                      // a callback
+        "My Very Professional Application", // a title
+        "OK"                                // the button text
+        );
+    }
+ 
     // Handle the back button
     //
-    function onBackKeyDown(e) {
-        e.preventDefault();
-        navigator.notification.confirm("Are you sure you want to exit ?", onConfirm, "Confirmation", "Yes,No"); 
-        // Prompt the user with the choice
+    function onBackKeyDown() {
+        navigator.notification.confirm(
+            'Are you sure you want to exit?!', // message
+             onConfirm,            // callback to invoke with index of button pressed
+            'Confirm exit',           // title
+            ['Yes','No']     // buttonLabels
+        );
+        function onConfirm(buttonIndex) {
+            if (buttonIndex == 1) {
+                navigator.app.exitApp();
+            }
+        }
     }
-
-    function onConfirm(button) {
-    if(button==1 ){//If User selected No, then we just do nothing
-        navigator.app.exitApp();// Otherwise we quit the app.
-    }else{
-        return;
-
-    }
-}
-
-
+ 
 </script>
 
 </head>
-<body>
+<body >
 
 <div id="preloader">
 	<div id="status">
@@ -87,14 +95,14 @@
 </div>
 
 <div class="homepage-wrapper">
-	<img class="homepage-logo" src="images/misc/logo.png"  alt="img">
-    <em class="homepage-logo-sub"></em>
+	<img class="homepage-logo" src="images/misc/logogkka.png"  alt="img">
+    <em class="homepage-logo-sub">Panakukkang</em>
     
     <div class="homepage-navigation">
     	
         <a class="type-icon"    href="warta.html">E-Warta</a>
         
-        <a class="mail-icon"	href="contact.html">Contact</a>
+        <a class="mail-icon"	onclick="onBackKeyDown()">Exit</a>
         
         <div class="clear"></div>
     </div>
