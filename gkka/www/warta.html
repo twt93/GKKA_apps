@@ -34,7 +34,17 @@
 <script type='text/javascript' src='scripts/framework.js'></script>
 <script type='text/javascript' src='scripts/framework.launcher.js'></script>
 
-<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+<script type="text/javascript" charset="utf-8">
+    document.addEventListener("backButton",onBackKeyDown,false);
+    function onBackKeyDown(){
+        alert("sukses");
+        navigator.app.backHistory();
+    }
+    document.addEventListener('deviceready',onDeviceReady,true);
+</script>
+ 
 </head>
 <body>
 
@@ -49,7 +59,7 @@
 
 <div class='toolbar'>  
     <h1> GKKA PNKK </h1>
-    <div class='backButton'><a href='index.html'>Back</a></div>
+    <div class='backButton'><a href='' rel="external" onclick="onBackKeyDown()">Back</a></div>
 </div>
 
 
