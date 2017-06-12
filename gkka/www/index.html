@@ -40,24 +40,29 @@
 
  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
  <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-  <script type="text/javascript" charset="utf-8" src=""></script>
+  
  <script type="text/javascript" charset="utf-8">
  
     // Wait for device API libraries to load
     // 
     // device APIs are available
     //
-    document.addEventListener('deviceready', this.onDeviceReady, false);
-    document.addEventListener("backbutton", onBackKeyDown, false);   
+    document.addEventListener('deviceready',onDeviceReady, false);
+
+     function onDeviceReady() {
+        // Empty
+        document.addEventListener("backbutton", onBackKeyDown, false);   
+    }
+
+    
     // Handle the back button
     //
     function onBackKeyDown() {
-	    alert("test");
         navigator.notification.confirm(
-            'Are you sure you want to exit?!', // message
+            'Are you sure you want to exit???', // message
              onConfirm,            // callback to invoke with index of button pressed
             'Confirm exit',           // title
-            ['Yes','No']     // buttonLabels
+            'Yes','No'     // buttonLabels
         );
     }
     function onConfirm(buttonIndex) {
