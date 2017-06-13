@@ -46,6 +46,7 @@
     // Wait for device API libraries to load
     // 
     // device APIs are available
+    document.addEventListener('deviceready',function(){alert('de‌​viceready')}, false);
     //
     document.addEventListener('deviceready',onDeviceReady, false);
 
@@ -62,7 +63,7 @@
             'Are you sure you want to exit???', // message
              onConfirm,            // callback to invoke with index of button pressed
             'Confirm exit',           // title
-            'Yes','No'     // buttonLabels
+            ['Yes','No']     // buttonLabels
         );
     }
     function onConfirm(buttonIndex) {
